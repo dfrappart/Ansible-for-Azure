@@ -2,11 +2,11 @@
 
 Avant de commencer avec Ansible pour Azure plusieurs étapes sont nécessaires:<br/>
 - Installer Ansible<br/>
-- Gérer la méthode authentification pour Azure avec deux possiblités<br/>
+- Gérer la méthode d'authentification pour Azure avec deux possiblités<br/>
     &nbsp;&nbsp;- Option SPN ("Service Principal Name")<br/>
     &nbsp;&nbsp;- 2.1 Option par utilisateur via l'Azure AD<br/>
 
-**Installation d'Ansible**<br/>
+**1.Installation d'Ansible**<br/>
 Pour une distribution Ubuntu 16.04 LTS :<br/>
 -Mise à jour du système<br/>
 -Installation de librairies de convention et ssl (libssl-dev libffi-dev)<br/>
@@ -19,6 +19,47 @@ sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev 
 ```
 sudo pip install ansible[azure]
 ```
+**Option SPN**
+https://docs.microsoft.com/fr-fr/azure/active-directory/develop/howto-create-service-principal-portal
+Créer un fichier ```~/.azure/credentials``` : <br/>
+```
+mkdir ~/.azure
+nano ~/.azure/credentials
+```
+```
+[default]
+subscription_id=<your-subscription_id>
+client_id=<security-principal-appid>
+secret=<security-principal-password>
+tenant=<security-principal-tenant>
+```
+
+**Option User**<br/>
+
+**Vérification de la configuration**<br/>
+
+```
+nano rg.yml
+```
+Copier ce "playbook" :<br/>
+```
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create resource group
+      azure_rm_resourcegroup:
+        name: ansible-test
+        location: westeurope
+      register: rg
+    - debug:
+        var: rg
+```
+Executer le playbook: <br/>
+```
+ansible-playbook rg.yml
+```
+
 
 
 
