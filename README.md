@@ -21,7 +21,7 @@ sudo pip install ansible[azure]
 ```
 **Option SPN**<br/>
 
-https://docs.microsoft.com/fr-fr/azure/active-directory/develop/howto-create-service-principal-portal
+https://docs.microsoft.com/fr-fr/azure/active-directory/develop/howto-create-service-principal-portal<br/>
 Créer un fichier ```~/.azure/credentials``` : <br/>
 ```
 mkdir ~/.azure
