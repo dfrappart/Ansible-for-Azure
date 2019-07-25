@@ -61,7 +61,7 @@ Copier ce code :<br/>
         var: rg
 ```
 Executer le playbook: <br/>
-(avez l'option "Option par utilisateur via l'Azure AD" il faudra s'authentifier avec az login avant d'exécuter le playbook )
+(Avec l'option "Option par utilisateur via l'Azure AD" il faudra s'authentifier avec az login avant d'exécuter le playbook )
 ```
 ansible-playbook rg.yml
 ```
