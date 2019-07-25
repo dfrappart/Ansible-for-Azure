@@ -27,7 +27,7 @@ Créer un fichier ```~/.azure/credentials``` : <br/>
 mkdir ~/.azure
 nano ~/.azure/credentials
 ```
-Copier le code en mettant les informations <br/>
+Copier le code en mettant vos informations (id de votre abonnement; id de l'application et son secret et id de votre tenant ) <br/>
 ```
 [default]
 subscription_id=<your-subscription_id>
@@ -36,15 +36,17 @@ secret=<security-principal-password>
 tenant=<security-principal-tenant>
 ```
 
-**Option User**<br/>
-Installer 
+**Option par utilisateur via l'Azure AD**<br/>
+Installer "Azure CLI"<br/>
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest<br/>
+
 
 **Vérification de la configuration**<br/>
-
+Création d'un playbook<br/>
 ```
 nano rg.yml
 ```
-Copier ce "playbook" :<br/>
+Copier ce code :<br/>
 ```
 ---
 - hosts: localhost
@@ -59,6 +61,7 @@ Copier ce "playbook" :<br/>
         var: rg
 ```
 Executer le playbook: <br/>
+(avez l'option "Option par utilisateur via l'Azure AD" il faudra s'authentifier avec az login avant d'exécuter le playbook )
 ```
 ansible-playbook rg.yml
 ```
