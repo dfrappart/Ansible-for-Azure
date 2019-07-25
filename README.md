@@ -20,13 +20,14 @@ sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev 
 sudo pip install ansible[azure]
 ```
 **Option SPN**<br/>
-
+Comment créer un Sevice Principal Name : <br/>
 https://docs.microsoft.com/fr-fr/azure/active-directory/develop/howto-create-service-principal-portal<br/>
 Créer un fichier ```~/.azure/credentials``` : <br/>
 ```
 mkdir ~/.azure
 nano ~/.azure/credentials
 ```
+Copier le code en mettant les informations <br/>
 ```
 [default]
 subscription_id=<your-subscription_id>
@@ -36,6 +37,7 @@ tenant=<security-principal-tenant>
 ```
 
 **Option User**<br/>
+Installer 
 
 **Vérification de la configuration**<br/>
 
