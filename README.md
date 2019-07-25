@@ -19,7 +19,7 @@ sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev 
 ```
 sudo pip install ansible[azure]
 ```
-**Authentification "Option SPN"**<br/>
+**Option avec "Authentification SPN"**<br/>
 Comment créer un Sevice Principal Name : <br/>
 https://docs.microsoft.com/fr-fr/azure/active-directory/develop/howto-create-service-principal-portal<br/>
 Créer un fichier ```~/.azure/credentials``` : <br/>
@@ -36,7 +36,7 @@ secret=<security-principal-password>
 tenant=<security-principal-tenant>
 ```
 
-**Authentification "Option par utilisateur via l'Azure" AD**<br/>
+**Option "Authentification par utilisateur via l'Azure" AD**<br/>
 Installer "Azure CLI"<br/>
 https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest<br/>
 
