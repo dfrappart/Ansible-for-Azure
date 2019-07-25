@@ -1,6 +1,6 @@
 # Ansible-for-Azure
 
-Avant de commencer avec Ansible pour Azure plusieurs étapes sont nécessaires:<br/>
+Avant de commencer avec Ansible pour Azure, plusieurs étapes sont nécessaires:<br/>
 - Installer Ansible<br/>
 - Gérer la méthode d'authentification pour Azure avec deux possiblités<br/>
     &nbsp;&nbsp;- Option SPN ("Service Principal Name")<br/>
@@ -59,9 +59,10 @@ Copier ce code :<br/>
       register: rg
     - debug:
         var: rg
+...
 ```
 Executer le playbook: <br/>
-(Avec l'option "Option par utilisateur via l'Azure AD" il faudra s'authentifier avec az login avant d'exécuter le playbook )
+(Avec l'option "Authentification par utilisateur via l'Azure", il faudra s'authentifier avec ```az login``` avant d'exécuter ce playbook )
 ```
 ansible-playbook rg.yml
 ```
