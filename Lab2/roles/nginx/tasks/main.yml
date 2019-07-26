@@ -1,0 +1,58 @@
+---
+- name: installation de NGINX et modules PHP 
+  become: yes
+  apt:
+    pkg:
+    - nginx
+    - php-fpm
+    - php-curl
+    - php-gd
+    - php-mbstring
+    - php-mcrypt
+    - php-xml
+    - php-xmlrpc
+    - php7.0-mysql
+    - php-mysql           
+    state: present
+    update_cache: yes
+
+- name: Configuration le PHP Processor
+  become: yes
+  lineinfile:
+    path: /etc/php/7.0/fpm/php.ini
+    line: 'cgi.fix_pathinfo=0'
+    create: yes
+  notify: php reload
+
+- name: Configuration Nginx PHP Processor
+  become: yes
+  copy:
+    src: ./roles/nginx/files/default
+    dest: /etc/nginx/sites-available/default
+  notify: nginx reload
+
+- name: Telechargement Wordpress et le decompresse
+  become: yes
+  unarchive:
+    src: https://wordpress.org/latest.tar.gz
+    dest: /tmp
+    remote_src: yes
+
+- name: Creation du fichier de configuration de wordpress
+  become: yes
+  copy:
+    src: /tmp/wordpress/wp-config-sample.php
+    dest: /tmp/wordpress/wp-config.php
+    remote_src: yes
+
+- name: Copie de wordpress dans /var/www/html
+  become: yes
+  command : cp -a /tmp/wordpress/. /var/www/html
+
+- name: Configuration du fichier wp-config.php
+  become: yes
+  copy:
+    src: ./roles/nginx/files/wp-config.php
+    dest: /var/www/html/wp-config.php
+
+...

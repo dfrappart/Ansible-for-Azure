@@ -1,0 +1,7 @@
+---
+- hosts: web
+  remote_user: pierrc
+
+  roles:
+    - nginx
+...
