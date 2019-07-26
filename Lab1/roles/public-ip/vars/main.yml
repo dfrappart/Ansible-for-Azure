@@ -1,0 +1,4 @@
+---
+public_ip_web: public-ip-web
+allocation_method: Dynamic
+...

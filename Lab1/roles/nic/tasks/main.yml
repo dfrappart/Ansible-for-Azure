@@ -1,0 +1,13 @@
+---
+- name: Creation de la NIC WEB
+  azure_rm_networkinterface:
+    name: "{{ nic_name_web }}"
+    resource_group: "{{ rg_name }}"
+    virtual_network: "{{ vnet_name }}"
+    subnet_name: "{{ subnetfe_name }}"
+    security_group: "{{ nsg_web_name }}"
+    ip_configurations:
+      - name: ipconfig1
+        public_ip_address_name: "{{ public_ip_web }}"
+        primary: True
+...

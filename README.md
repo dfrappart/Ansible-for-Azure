@@ -4,7 +4,7 @@ Avant de commencer avec Ansible pour Azure, plusieurs étapes sont nécessaires:
 - Installer Ansible<br/>
 - Gérer la méthode d'authentification pour Azure avec deux possiblités<br/>
     &nbsp;&nbsp;- Option SPN ("Service Principal Name")<br/>
-    &nbsp;&nbsp;- 2.1 Option par utilisateur via l'Azure AD<br/>
+    &nbsp;&nbsp;- Option par utilisateur via l'Azure AD<br/>
 
 **1.Installation d'Ansible**<br/>
 Pour une distribution Ubuntu 16.04 LTS :<br/>

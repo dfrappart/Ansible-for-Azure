@@ -1,0 +1,19 @@
+---
+- name: installation de la VM Web
+  azure_rm_virtualmachine:
+    name: "{{ vm_name_web }}"
+    resource_group: "{{ rg_name }}"
+    vm_size: "{{ vm_size }}"
+    managed_disk_type: "{{ vm_type_disk }}"
+    admin_username: "{{ admin_user_vm }}"
+    ssh_password_enabled: false
+    ssh_public_keys:
+       - path: /home/{{ admin_user_vm }}/.ssh/authorized_keys
+         key_data: "{{ key_vm }}"
+    network_interfaces: "{{ nic_name_web }}"
+    image:
+      offer: "{{ offer_vm }}"
+      publisher: "{{ publisher_vm }}"
+      sku: "{{ sku_vm }}"
+      version: "{{ version_vm }}"
+...

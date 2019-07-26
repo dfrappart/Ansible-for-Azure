@@ -1,0 +1,20 @@
+---
+- name: Installation du Network Seurity Group WEB
+  azure_rm_securitygroup:
+    name: "{{ nsg_web_name }}"
+    resource_group: "{{ rg_name }}"
+    purge_rules: yes
+    rules:
+        - name: AllowSSH
+          protocol: Tcp
+          destination_port_range: 22
+          access: Allow
+          priority: 100
+          direction: Inbound
+        - name: AllowHTTP
+          protocol: Tcp
+          destination_port_range: 80
+          access: Allow
+          priority: 110
+          direction: Inbound
+...

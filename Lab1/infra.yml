@@ -1,0 +1,15 @@
+---
+# Installation d'une simple VM
+- name: Installation de ma simple VM
+  hosts: localhost
+  connection: local
+
+  roles:
+  - rg
+  - public-ip
+  - nsg
+  - vnet
+  - subnet
+  - nic
+  - vm
+...
