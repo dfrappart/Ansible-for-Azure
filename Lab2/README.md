@@ -1,4 +1,4 @@
-#Déploiement d'un simple site Web
+# Déploiement d'un simple site Web
 **Avant de commencer**<br/>
 Pour pouvoir appliquer un playbook à une ou des VM, il faut un inventaire. Un inventaire est le moyen de pouvoir renseigner les VM cibles sur lesquelles on souhaite appliquer un playbook. Un playbook peut être static ou dynamique.<br/>
 
