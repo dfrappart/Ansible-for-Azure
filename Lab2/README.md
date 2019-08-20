@@ -12,6 +12,7 @@ IP ou URL
 Plus d'informations https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html<br/>
 
 **test de connexion**<br/>
+Faire le fichier d'inventaire :
 ```
 nano hosts
 ```
@@ -19,5 +20,18 @@ nano hosts
 [web]
 51.144.95.209
 ```
-ansible -m ping web -i hosts
+lancer cette commande (test de connexion)
+```
+~ ansible -m ping web -i hosts
+```
+Vous devez avoir un retour :
+```
+51.144.95.209 | SUCCESS => {
+        "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
 
