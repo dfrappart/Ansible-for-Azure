@@ -1,0 +1,19 @@
+---
+- name: Permission sur le repertoire /var/www/html
+  become: yes
+  file:
+    path: /var/www/html
+    mode: '0755'
+
+- name: Delete le fichier index de base
+  become: yes
+  file:
+    path: /var/www/html/index.nginx-debian.html
+    state: absent
+
+- name: Uplaod des fichiers du site
+  become: yes
+  copy: 
+    src: ./SiteWeb/
+    dest: /var/www/html/
+...
