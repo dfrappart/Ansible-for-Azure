@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  remote_user: pierrc
+
+  roles:
+    - maj
+    - nginx
+    - uploadweb
+...

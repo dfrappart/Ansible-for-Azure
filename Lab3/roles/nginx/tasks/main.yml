@@ -1,0 +1,8 @@
+---
+- name: installation de Nginx
+  become: yes
+  apt:
+    name: nginx
+    state: present
+    force_apt_get: yes    
+...

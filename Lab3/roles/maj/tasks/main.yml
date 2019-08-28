@@ -1,0 +1,14 @@
+---
+- name: Like "apt-get update"
+  become: true
+  apt:
+    upgrade: dist
+    force_apt_get: yes
+
+- name: Like "apt-get upgrade"
+  become: true
+  apt:
+    name: "*"
+    state: latest
+    force_apt_get: yes
+...

@@ -11,7 +11,7 @@ IP ou URL
 ```
 Plus d'informations https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html<br/>
 
-**test de connexion**<br/>
+**Test de connexion**<br/>
 Faire le fichier d'inventaire :
 ```
 nano hosts
@@ -34,4 +34,5 @@ Vous devez avoir un retour :
     "ping": "pong"
 }
 ```
+**Inventaire "dynamic"**<br/>
 
