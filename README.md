@@ -37,7 +37,7 @@ tenant=<security-principal-tenant>
 ```
 
 **Option "Authentification par utilisateur via l'Azure AD"**<br/>
-Installer "Azure CLI"<br/>
+Installer "Azure CLI":<br/>
 https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest<br/>
 
 
