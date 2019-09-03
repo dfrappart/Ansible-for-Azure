@@ -1,8 +1,0 @@
----
-- name: Permission sur le repertoire /var/www/html
-  become: yes
-  
-  file:
-    path: /var/www/html
-    mode: '0755' 
-...

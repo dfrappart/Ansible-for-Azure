@@ -1,8 +1,0 @@
----
-- name: mise à jour
-  become: true
-  apt:
-    update_cache: yes
-    upgrade: dist
-    force_apt_get: yes    
-...
