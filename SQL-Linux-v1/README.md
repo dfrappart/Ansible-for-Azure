@@ -24,7 +24,7 @@ $ ansible-playbook -i myazure_rm.yml installation-sql.yml
 Attention, dans cet exemple le mot de passe n'est pas chiffré. Pour chiffrer, passer par Ansible Vault (https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 
 **installation-sql-tools.yml**<br/>
-Cet exemple de playbook déploie les "SQL Server command-line tools<br/>
+Cet exemple de playbook déploie les "SQL Server command-line tools"<br/>
 ```
 $ ansible-playbook -i myazure_rm.yml installation-sql-tools.yml
 ```

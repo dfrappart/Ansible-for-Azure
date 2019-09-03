@@ -2,9 +2,12 @@
 - name: Creation d'une base de test SQL Server sur Linux (ubuntu 16.04)
   hosts: all
   become: yes
+  
+  vars:
+    sa_password: Password123$
+    db_name: TestDB
 
   tasks:
-
   - name: Installation de bibilothèques pour MS SQL, protocole et outils d'installation
     apt:
       pkg:
@@ -21,9 +24,9 @@
 
   - name: creation de la base
     mssql_db:
-      name: TestDB
+      name: "{{ db_name }}"
       state: present
       login_host: 127.0.0.1
       login_user: sa
-      login_password: Password123$   
+      login_password: "{{ sa_password }}"   
 ...
