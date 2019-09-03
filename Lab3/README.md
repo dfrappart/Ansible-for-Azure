@@ -34,5 +34,3 @@ Vous devez avoir un retour :
     "ping": "pong"
 }
 ```
-**Inventaire "dynamic"**<br/>
-

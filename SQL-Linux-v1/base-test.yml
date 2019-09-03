@@ -1,0 +1,29 @@
+---
+- name: Creation d'une base de test SQL Server sur Linux (ubuntu 16.04)
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Installation de bibilothèques pour MS SQL, protocole et outils d'installation
+    apt:
+      pkg:
+        - freetds-dev
+        - freetds-bin
+        - python-dev
+        - python-pip
+      state: latest
+      force_apt_get: yes
+
+  - name: Installation de pymssql
+    pip:
+      name: pymssql
+
+  - name: creation de la base
+    mssql_db:
+      name: TestDB
+      state: present
+      login_host: 127.0.0.1
+      login_user: sa
+      login_password: Password123$   
+...

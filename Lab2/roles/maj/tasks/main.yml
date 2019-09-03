@@ -1,14 +1,8 @@
 ---
-- name: Like "apt-get update"
+- name: mise à jour
   become: true
   apt:
+    update_cache: yes
     upgrade: dist
-    force_apt_get: yes
-
-- name: Like "apt-get upgrade"
-  become: true
-  apt:
-    name: "*"
-    state: latest
-    force_apt_get: yes
+    force_apt_get: yes    
 ...

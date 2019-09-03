@@ -1,10 +1,4 @@
 ---
-- name: Permission sur le repertoire /var/www/html
-  become: yes
-  file:
-    path: /var/www/html
-    mode: '0755'
-
 - name: Delete le fichier index de base
   become: yes
   file:
@@ -16,4 +10,6 @@
   copy: 
     src: ./SiteWeb/
     dest: /var/www/html/
+  notify:
+    - start nginx
 ...
