@@ -5,7 +5,7 @@ Voici trois examples de playbooks Ansible :<br/>
 **- installation-sql-tools.yml**<br/>
 **- base-test.yml**<br/>
 
-Pour créer l'inventaire dynamique (ex:myazure_rm.yml) : <br/>
+Avant d'executer les playbooks, il faut créer l'inventaire dynamique (ex:myazure_rm.yml) : <br/>
 ```
 nano myazure_rm.yml
 ```
@@ -21,7 +21,7 @@ Cet exemple de playbook déploie SQL Server 2007 sur Ubuntu 16.04 LTS<br/>
 ```
 $ ansible-playbook -i myazure_rm.yml installation-sql.yml
 ```
-Attention dans cet exemple le mot de passe n'est pas chiffré. Pour chiffrer, passer par Ansible Vault (https://docs.ansible.com/ansible/latest/user_guide/vault.html)
+Attention, dans cet exemple le mot de passe n'est pas chiffré. Pour chiffrer, passer par Ansible Vault (https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 
 **installation-sql-tools.yml**<br/>
 Cet exemple de playbook déploie les "SQL Server command-line tools<br/>
@@ -33,3 +33,10 @@ Cet exemple de playbook déploie le module "pymssql" et base de test
 ```
 $ ansible-playbook -i myazure_rm.yml base-test.yml
 ```
+Pour tester la configuration<br/>
+```
+sqlcmd -S localhost -U SA -P 'Password123$'
+SELECT Name from sys.Databases
+GO
+```
+
