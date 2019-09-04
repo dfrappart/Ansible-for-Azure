@@ -5,7 +5,7 @@ Voici un examples de playbooks Ansible avec trois rôles :<br/>
 **- install-SQL-Server-CLT**<br/>
 **- test-base**<br/>
 
-Apres avoir installé Ansible sur votre serveur de contrôle ( https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).<br/>
+Installation Ansible (machine maitre) : https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).<br/>
 Avant d'executer le playbook, il faut créer l'inventaire dynamique (ex:myazure_rm.yml) : <br/>
 ```
 nano myazure_rm.yml
