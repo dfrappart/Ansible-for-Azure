@@ -1,0 +1,38 @@
+---
+- name: import de la cle GPG
+  become: yes
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: installation du repo mssql-server
+  become: yes
+  get_url:
+    url: https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017.list
+    dest: /etc/apt/sources.list.d/mssql-server.list
+
+- name: refresh du cache apt-get plus upgrade
+  become: yes
+  apt:            
+    update_cache: yes
+    upgrade: dist
+    force_apt_get: yes
+
+- name: installation du package mssql-server
+  become: yes
+  apt:
+    name: mssql-server
+    state: present
+    force_apt_get: yes
+
+- name: stop sql server si déjà installé
+  become: yes
+  service:
+    name: mssql-server
+    state: stopped
+
+- name: Setup de mssql-server
+  become: yes
+  shell: MSSQL_PID="{{ pid }}" MSSQL_SA_PASSWORD="{{ sa_password }}" /opt/mssql/bin/mssql-conf -n setup accept-eula
+  
+...

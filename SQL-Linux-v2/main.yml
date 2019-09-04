@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: pierrc
+
+  roles:
+    - install-SQL-Server-2017
+    - install-SQL-Server-CLT
+    - test-base
+...
