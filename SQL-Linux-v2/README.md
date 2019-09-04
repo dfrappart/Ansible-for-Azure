@@ -1,4 +1,4 @@
-# Playbook Ansible.<br/> Installation SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
+# Playbook Ansible.<br/> Installation automatique SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
 
 Voici un example de playbooks Ansible avec trois rôles :<br/>
 **- install-SQL-Server-2017** (installation de SQL)<br/>
@@ -44,11 +44,13 @@ ansible-playbook -i myazure_rm.yml main.yml
 Attention, dans cet exemple le mot de passe n'est pas chiffré. Pour le chiffrer, passer par Ansible Vault (https://docs.ansible.com/ansible/latest/user_guide/vault.html)<br/>
 
 
-Pour tester la configuration<br/>
+Pour tester la configuration depuis la machine cible<br/>
 
 ```
 sqlcmd -S localhost -U SA -P 'Password123$'
 SELECT Name from sys.Databases
 GO
 ```
+
+Bon test !
 
