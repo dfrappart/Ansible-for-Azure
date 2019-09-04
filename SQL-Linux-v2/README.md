@@ -1,13 +1,15 @@
-# Playbook Ansible<br/> Installation SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
+# Playbook Ansible.<br/> Installation SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
 
 Voici un example de playbooks Ansible avec trois rôles :<br/>
-**- install-SQL-Server-2017**<br/>
-**- install-SQL-Server-CLT**<br/>
-**- test-base**<br/>
+**- install-SQL-Server-2017** (installation de SQL)<br/>
+**- install-SQL-Server-CLT** (installation Command Line Tools)<br/>
+**- test-base** (creation d'une base de test) <br/>
 
-Installation Ansible sur la machine maitre : .<br/>
-- Ansible pour Azure
-- Azure CLI
+
+Pour executer le playbook à partir d'une machine maître Ubuntu, il faut installer : .<br/>
+- Ansible pour Azure (https://docs.microsoft.com/fr-fr/azure/virtual-machines/linux/ansible-install-configure)
+- Azure CLI (https://docs.microsoft.com/fr-fr/cli/azure/install-azure-cli)
+- S'authentifier ```Az login``` 
 
 Avant d'executer le playbook, il faut créer l'inventaire dynamique (definir les machines cibles) <br/>
 Plus d'informations: https://docs.ansible.com/ansible/latest/plugins/inventory/azure_rm.html.<br/>
