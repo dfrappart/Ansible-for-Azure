@@ -34,11 +34,11 @@ Pour executer le playbook:<br/>
 ansible-playbook -i myazure_rm.yml main.yml
 ```
 
-Attention, dans cet exemple le mot de passe n'est pas chiffré. Pour le chiffrer, passer par Ansible Vault (https://docs.ansible.com/ansible/latest/user_guide/vault.html)
+Attention, dans cet exemple le mot de passe n'est pas chiffré. Pour le chiffrer, passer par Ansible Vault (https://docs.ansible.com/ansible/latest/user_guide/vault.html)<br/>
 
 
-```
 Pour tester la configuration<br/>
+
 ```
 sqlcmd -S localhost -U SA -P 'Password123$'
 SELECT Name from sys.Databases
