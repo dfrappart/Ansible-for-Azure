@@ -1,4 +1,4 @@
-# Playbook Ansible:<br/> Installation SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
+# Playbook Ansible<br/> Installation SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
 
 Voici un example de playbooks Ansible avec trois rôles :<br/>
 **- install-SQL-Server-2017**<br/>
@@ -9,7 +9,9 @@ Installation Ansible sur la machine maitre : .<br/>
 - Ansible pour Azure
 - Azure CLI
 
-Avant d'executer le playbook, il faut créer l'inventaire dynamique (ex:myazure_rm.yml) : <br/>
+Avant d'executer le playbook, il faut créer l'inventaire dynamique (definir les machines cibles) <br/>
+Plus d'informations: https://docs.ansible.com/ansible/latest/plugins/inventory/azure_rm.html.<br/>
+(ex:myazure_rm.yml) : <br/>
 ```
 nano myazure_rm.yml
 ```
