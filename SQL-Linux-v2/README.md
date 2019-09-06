@@ -68,3 +68,4 @@ sqlcmd -S localhost -U SA -P 'Password123$'
 SELECT Name from sys.Databases
 GO
 ```
+Bon test !
