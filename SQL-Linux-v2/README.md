@@ -1,4 +1,4 @@
-# Playbook Ansible.<br/> Installation automatique SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
+# Playbook Ansible.<br/> Installation automatique de SQL Server 2017 sur une VM Ubuntu 16.04 LTS dans Azure
 
 Voici un example de playbooks Ansible avec trois rôles :<br/>
 **- install-SQL-Server-2017** (installation de SQL)<br/>
@@ -22,6 +22,11 @@ plugin: azure_rm
 include_vm_resource_groups:
 - Mom-du-ressource-groupe-de-la-VM-cible
 auth_source: auto
+# toute les VMs dans le ressource groupe
+# pour selectionner une VM dans ce ressource groupe il faudra "tager la VM"
+# keyed_groups:
+#- prefix: tag
+#  key: tags
 ```
 Test de la connexion avant execution du playbook<br/>
 ```
